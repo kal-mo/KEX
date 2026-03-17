@@ -1,0 +1,11 @@
+Bör fungera på valfri mission - kör programmet efter att det andra redan är igång. Bör få drönare att rotera några varv, varefter ordinarie mission körs vidare. ordinare mission behöver RTL ställas om sådant att det inte direkt åker tillbaka till startplats när kontakt bryts. Detta bör lösa det:
+    await drone.param.set_param_int("NAV_RCL_ACT", 1)
+    await drone.param.set_param_int("NAV_DLL_ACT",1)
+    await drone.param.set_param_int("COM_OBL_RC_ACT",1)
+
+    await drone.param.set_param_float("COM_OF_LOSS_T", 10.0)
+    await drone.param.set_param_int("COM_DL_LOSS_T", 60)
+
+Ska funka med bifogad mission: mission_baylands
+
+Vissa buggar återstår dock - kör man interrupted_mission flertalet gånger eller i känsliga punkter kan error fortfarande uppstå och drönaren återvänder. Jobbar på detta!

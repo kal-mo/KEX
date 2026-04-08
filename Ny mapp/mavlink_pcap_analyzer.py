@@ -7,7 +7,7 @@ import os
 # -----------------------------
 # CONFIG
 # -----------------------------
-pcap_file = "mavlink.pcap0"
+pcap_file = "packets/mavlink.pcap0"
 
 # -----------------------------
 # Load PCAP file
